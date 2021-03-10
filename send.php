@@ -25,7 +25,10 @@ if (mail($para, $asunto, utf8_decode($mensaje), $header)) {
         window.location.href="index.html";
         </script>';
 } else {
-    echo 'Ha habido un error al enviar el formulario, inténtalo de nuevo por favor';
+    echo '<script type="text/javascript">
+    alert("Ha habido un error al enviar el formulario, inténtalo de nuevo por favor");
+    window.location.href="index.html";
+    </script>';
 }
 header('Location:/');
 ?>
