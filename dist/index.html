@@ -95,6 +95,7 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
       display: flex;
       flex-direction: row;
       margin-bottom: 5px;
+      justify-content: flex-end;
   }
   .group-label{
       width: 70px;
@@ -108,11 +109,22 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
       padding-bottom: 5px;
       color: #2c2930;
   }
+  #txtfecha1, 
+  #txtfecha2, 
+  #txtfecha3, 
+  #txtfecha4, 
+  #txtfecha5, 
+  #txtfecha6{
+    padding-right: 8px;
+    border-radius: 0px;
+    color: #2c2930;
+    background-color: #E8F0FE;
+  }
   @media (max-width: 425px) {
       .contact--lockup {
         justify-content: center;
         overflow: auto;
-        padding-top: 200px;
+        padding-top: 280px;
         padding-bottom: 30px;
         margin-top: 100px;
         height: 80vw;
@@ -126,7 +138,7 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
   @media (min-width: 425px) {
       .contact--lockup {
         overflow: auto;
-        padding-top: 180px;
+        padding-top: 260px;
         padding-bottom: 30px;
         margin-top: 100px;
         height: 80vw;
@@ -139,25 +151,35 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
   }
   @media (min-width: 490px) {
       .contact--lockup {
-        padding-top: 150px;
+        padding-top: 230px;
       } 
   }
   @media (min-width: 548px) {
       .contact--lockup {
-        padding-top: 110px;
+        padding-top: 200px;
       } 
   }
-
+  @media (min-width: 600px){
+    .contact--lockup {
+      height: 70vw;
+    }
+  }
+  @media (min-width: 690px){
+    .contact--lockup {
+      height: 60vw;
+      padding-top: 230px;
+    }
+  }
   @media (min-width: 768px) {
       .contact--lockup {
-          height: 100%;
-          padding-top: 0px;
+        height: 100%;
+        padding-top: 0px;
         padding-bottom: 0px;
         margin-top: 0px;
         flex-direction: row;
       }
       .form-content{
-          margin-right: 80px;
+        margin-right: 80px;
       }
 
   }
@@ -868,54 +890,68 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                 <div class="form-content modal">
                     <h2>Dejanos tus datos</h2>
                     <form method="post" name="contact-form" data-netlify="true"> 
-                    <div class="formgrup">
-                        <div class="group-form">
+                      <div class="formgrup">
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label class="input-txt" for="InputNombre">
+                                      Nombre
+                                  </label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre"
+                                      required
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputTelefono">Telefono</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+                                      title="Solo números."/>
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputEmail">Email</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputCiudad">Ciudad</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" 
+                                      name="ciudad" placeholder="Ciudad" 
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
+                                      title="Solo letras">
+                              </div>
+                          </div>
+                          <div class="group-form">
                             <div class="group-label">
-                                <label class="input-txt" for="InputNombre">
-                                    Nombre
-                                </label>
-                            </div>
+                              <label for="InputFecha">Fecha</label>
+                          </div>
                             <div class="group-input">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre"
-                                    required
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122) || (event.charCode == 32)' />
+                              <input type="date" 
+                              disabled
+                              class="form-control" 
+                              id="txtfecha1" 
+                              required
+                              name="txtfecha" 
+                              class="form-control" />                           
                             </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputTelefono">Telefono</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
-                                    title="Solo números."/>
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputEmail">Email</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputCiudad">Ciudad</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" 
-                                    name="ciudad" placeholder="Ciudad" 
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122) || (event.charCode == 32)' 
-                                    title="Solo letras">
-                            </div>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        <span style="padding-left: 8px; padding-right: 8px;">Enviar
-                        </span>
-                        </button>
-                    </form>
-                </div>
+                          </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                          <span style="padding-left: 8px; padding-right: 8px;">Enviar
+                          </span>
+                          </button>
+                      </form>
+                    </div>
                 <div class="modal">
                   <div class="redes-sociales" style="background-color: transparent">
                     <a target="_blanck" href="https://www.youtube.com/channel/UCTXO5mCKu6Ead7DJWz85SJw/featured?view_as=subscriber"><img style="width: 40px; height: 35px; object-fit: contain" src="./assets/img/social/logos-3.png"></a>
@@ -946,54 +982,68 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                 <div class="form-content modal">
                     <h2>Dejanos tus datos</h2>
                     <form method="post" name="contact-form" data-netlify="true"> 
-                    <div class="formgrup">
-                        <div class="group-form">
+                      <div class="formgrup">
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label class="input-txt" for="InputNombre">
+                                      Nombre
+                                  </label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre"
+                                      required
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputTelefono">Telefono</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+                                      title="Solo números."/>
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputEmail">Email</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputCiudad">Ciudad</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" 
+                                      name="ciudad" placeholder="Ciudad" 
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
+                                      title="Solo letras">
+                              </div>
+                          </div>
+                          <div class="group-form">
                             <div class="group-label">
-                                <label class="input-txt" for="InputNombre">
-                                    Nombre
-                                </label>
-                            </div>
+                              <label for="InputFecha">Fecha</label>
+                          </div>
                             <div class="group-input">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre"
-                                    required
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              <input type="date" 
+                              disabled
+                              class="form-control" 
+                              id="txtfecha2" 
+                              required
+                              name="txtfecha" 
+                              class="form-control" />                           
                             </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputTelefono">Telefono</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
-                                    title="Solo números."/>
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputEmail">Email</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputCiudad">Ciudad</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" 
-                                    name="ciudad" placeholder="Ciudad" 
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
-                                    title="Solo letras">
-                            </div>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        <span style="padding-left: 8px; padding-right: 8px;">Enviar
-                        </span>
-                        </button>
-                    </form>
-                </div>
+                          </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                          <span style="padding-left: 8px; padding-right: 8px;">Enviar
+                          </span>
+                          </button>
+                      </form>
+                  </div>
                 <div class="modal">
                 	<div class="redes-sociales" style="background-color: transparent">
                     <a target="_blanck" href="https://www.youtube.com/channel/UCTXO5mCKu6Ead7DJWz85SJw/featured?view_as=subscriber"><img style="width: 40px; height: 35px; object-fit: contain" src="./assets/img/social/logos-3.png"></a>
@@ -1025,54 +1075,68 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                 <div class="form-content modal">
                     <h2>Dejanos tus datos</h2>
                     <form method="post" name="contact-form" data-netlify="true"> 
-                    <div class="formgrup">
-                        <div class="group-form">
+                      <div class="formgrup">
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label class="input-txt" for="InputNombre">
+                                      Nombre
+                                  </label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre"
+                                      required
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputTelefono">Telefono</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+                                      title="Solo números."/>
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputEmail">Email</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputCiudad">Ciudad</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" 
+                                      name="ciudad" placeholder="Ciudad" 
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
+                                      title="Solo letras">
+                              </div>
+                          </div>
+                          <div class="group-form">
                             <div class="group-label">
-                                <label class="input-txt" for="InputNombre">
-                                    Nombre
-                                </label>
-                            </div>
+                              <label for="InputFecha">Fecha</label>
+                          </div>
                             <div class="group-input">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre"
-                                    required
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              <input type="date" 
+                              disabled
+                              class="form-control" 
+                              id="txtfecha3" 
+                              required
+                              name="txtfecha" 
+                              class="form-control" />                           
                             </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputTelefono">Telefono</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
-                                    title="Solo números."/>
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputEmail">Email</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputCiudad">Ciudad</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" 
-                                    name="ciudad" placeholder="Ciudad" 
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
-                                    title="Solo letras">
-                            </div>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        <span style="padding-left: 8px; padding-right: 8px;">Enviar
-                        </span>
-                        </button>
-                    </form>
-                </div>
+                          </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                          <span style="padding-left: 8px; padding-right: 8px;">Enviar
+                          </span>
+                          </button>
+                      </form>
+                    </div>
                 <div class="modal">
                 <div class="redes-sociales" style="background-color: transparent">
                     <a target="_blanck" href="https://www.youtube.com/channel/UCTXO5mCKu6Ead7DJWz85SJw/featured?view_as=subscriber"><img style="width: 40px; height: 35px; object-fit: contain" src="./assets/img/social/logos-3.png"></a>
@@ -1103,54 +1167,68 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                 <div class="form-content modal">
                     <h2>Dejanos tus datos</h2>
                     <form method="post" name="contact-form" data-netlify="true"> 
-                    <div class="formgrup">
-                        <div class="group-form">
+                      <div class="formgrup">
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label class="input-txt" for="InputNombre">
+                                      Nombre
+                                  </label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre"
+                                      required
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputTelefono">Telefono</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+                                      title="Solo números."/>
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputEmail">Email</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputCiudad">Ciudad</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" 
+                                      name="ciudad" placeholder="Ciudad" 
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
+                                      title="Solo letras">
+                              </div>
+                          </div>
+                          <div class="group-form">
                             <div class="group-label">
-                                <label class="input-txt" for="InputNombre">
-                                    Nombre
-                                </label>
-                            </div>
+                              <label for="InputFecha">Fecha</label>
+                          </div>
                             <div class="group-input">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre"
-                                    required
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              <input type="date" 
+                              disabled
+                              class="form-control" 
+                              id="txtfecha4" 
+                              required
+                              name="txtfecha" 
+                              class="form-control" />                           
                             </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputTelefono">Telefono</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
-                                    title="Solo números."/>
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputEmail">Email</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputCiudad">Ciudad</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" 
-                                    name="ciudad" placeholder="Ciudad" 
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
-                                    title="Solo letras">
-                            </div>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        <span style="padding-left: 8px; padding-right: 8px;">Enviar
-                        </span>
-                        </button>
-                    </form>
-                </div>
+                          </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                          <span style="padding-left: 8px; padding-right: 8px;">Enviar
+                          </span>
+                          </button>
+                      </form>
+                    </div>
                 <div class="modal">
                 <div class="redes-sociales" style="background-color: transparent">
                     <a target="_blanck" href="https://www.youtube.com/channel/UCTXO5mCKu6Ead7DJWz85SJw/featured?view_as=subscriber"><img style="width: 40px; height: 35px; object-fit: contain" src="./assets/img/social/logos-3.png"></a>
@@ -1181,54 +1259,68 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                 <div class="form-content modal">
                     <h2>Dejanos tus datos</h2>
                     <form method="post" name="contact-form" data-netlify="true"> 
-                    <div class="formgrup">
-                        <div class="group-form">
+                      <div class="formgrup">
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label class="input-txt" for="InputNombre">
+                                      Nombre
+                                  </label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre"
+                                      required
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputTelefono">Telefono</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+                                      title="Solo números."/>
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputEmail">Email</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputCiudad">Ciudad</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" 
+                                      name="ciudad" placeholder="Ciudad" 
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
+                                      title="Solo letras">
+                              </div>
+                          </div>
+                          <div class="group-form">
                             <div class="group-label">
-                                <label class="input-txt" for="InputNombre">
-                                    Nombre
-                                </label>
-                            </div>
+                              <label for="InputFecha">Fecha</label>
+                          </div>
                             <div class="group-input">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre"
-                                    required
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              <input type="date" 
+                              disabled
+                              class="form-control" 
+                              id="txtfecha5" 
+                              required
+                              name="txtfecha" 
+                              class="form-control" />                           
                             </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputTelefono">Telefono</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
-                                    title="Solo números."/>
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputEmail">Email</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputCiudad">Ciudad</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" 
-                                    name="ciudad" placeholder="Ciudad" 
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
-                                    title="Solo letras">
-                            </div>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        <span style="padding-left: 8px; padding-right: 8px;">Enviar
-                        </span>
-                        </button>
-                    </form>
-                </div>
+                          </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                          <span style="padding-left: 8px; padding-right: 8px;">Enviar
+                          </span>
+                          </button>
+                      </form>
+                    </div>
                 <div class="modal">
                 <div class="redes-sociales" style="background-color: transparent">
                     <a target="_blanck" href="https://www.youtube.com/channel/UCTXO5mCKu6Ead7DJWz85SJw/featured?view_as=subscriber"><img style="width: 40px; height: 35px; object-fit: contain" src="./assets/img/social/logos-3.png"></a>
@@ -1260,54 +1352,68 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                 <div class="form-content modal">
                     <h2>Dejanos tus datos</h2>
                     <form method="post" name="contact-form" data-netlify="true"> 
-                    <div class="formgrup">
-                        <div class="group-form">
+                      <div class="formgrup">
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label class="input-txt" for="InputNombre">
+                                      Nombre
+                                  </label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="nombre" placeholder="Nombre"
+                                      required
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputTelefono">Telefono</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
+                                      title="Solo números."/>
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputEmail">Email</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
+                              </div>
+                          </div>
+                          <div class="group-form">
+                              <div class="group-label">
+                                  <label for="InputCiudad">Ciudad</label>
+                              </div>
+                              <div class="group-input">
+                                  <input type="text" class="form-control" 
+                                      name="ciudad" placeholder="Ciudad" 
+                                      onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
+                                      title="Solo letras">
+                              </div>
+                          </div>
+                          <div class="group-form">
                             <div class="group-label">
-                                <label class="input-txt" for="InputNombre">
-                                    Nombre
-                                </label>
-                            </div>
+                              <label for="InputFecha">Fecha</label>
+                          </div>
                             <div class="group-input">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre"
-                                    required
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' />
+                              <input type="date" 
+                              disabled
+                              class="form-control" 
+                              id="txtfecha6" 
+                              required
+                              name="txtfecha" 
+                              class="form-control" />                           
                             </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputTelefono">Telefono</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" name="telefono" required placeholder="Telefono" onkeypress='return (event.charCode >= 48 && event.charCode <= 57)'
-                                    title="Solo números."/>
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputEmail">Email</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="group-form">
-                            <div class="group-label">
-                                <label for="InputCiudad">Ciudad</label>
-                            </div>
-                            <div class="group-input">
-                                <input type="text" class="form-control" 
-                                    name="ciudad" placeholder="Ciudad" 
-                                    onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
-                                    title="Solo letras">
-                            </div>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                        <span style="padding-left: 8px; padding-right: 8px;">Enviar
-                        </span>
-                        </button>
-                    </form>
-                </div>
+                          </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                          <span style="padding-left: 8px; padding-right: 8px;">Enviar
+                          </span>
+                          </button>
+                      </form>
+                  </div>
                 <div class="modal">
                 <div class="redes-sociales" style="background-color: transparent">
                     <a target="_blanck" href="https://www.youtube.com/channel/UCTXO5mCKu6Ead7DJWz85SJw/featured?view_as=subscriber"><img style="width: 40px; height: 35px; object-fit: contain" src="./assets/img/social/logos-3.png"></a>
@@ -1650,7 +1756,25 @@ function changeImage() {
 
       gtag('config', 'UA-113771734-1');
     </script>
+    <script>
+      window.onload = function(){
+        var fecha = new Date(); //Fecha actual
+        var mes = fecha.getMonth()+1; //obteniendo mes
+        var dia = fecha.getDate(); //obteniendo dia
+        var ano = fecha.getFullYear(); //obteniendo año
+        if(dia<10)
+          dia='0'+dia; //agrega cero si el menor de 10
+        if(mes<10)
+          mes='0'+mes //agrega cero si el menor de 10
+        document.getElementById('txtfecha1').value=ano+"-"+mes+"-"+dia;
+        document.getElementById('txtfecha2').value=ano+"-"+mes+"-"+dia;
+        document.getElementById('txtfecha3').value=ano+"-"+mes+"-"+dia;
+        document.getElementById('txtfecha4').value=ano+"-"+mes+"-"+dia;
+        document.getElementById('txtfecha5').value=ano+"-"+mes+"-"+dia;
+        document.getElementById('txtfecha6').value=ano+"-"+mes+"-"+dia;
 
+      }
+    </script>
 
     </body>
     </html>
