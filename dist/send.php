@@ -17,7 +17,7 @@ $mensaje .= 'Email: ' . $mail . " \r\n";
 $mensaje .= 'Ciudad: ' . $ciudad . " \r\n";
 $mensaje .= 'Enviado el ' . date('d/m/Y', time());
 // Info@led-ls.co
-$para = 'brahyan805@gmail.com';
+$para = 'gustavo@komercia.co';
 $asunto = 'Registro de Contacto';
 if (mail($para, $asunto, utf8_decode($mensaje), $header)) {
     echo '<script type="text/javascript">
