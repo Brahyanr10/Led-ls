@@ -931,20 +931,6 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                                       title="Solo letras">
                               </div>
                           </div>
-                          <div class="group-form">
-                            <div class="group-label">
-                              <label for="InputFecha">Fecha</label>
-                          </div>
-                            <div class="group-input">
-                              <input type="date" 
-                              disabled
-                              class="form-control" 
-                              id="txtfecha1" 
-                              required
-                              name="txtfecha" 
-                              class="form-control" />                           
-                            </div>
-                          </div>
                           </div>
                           <button type="submit" class="btn btn-primary">
                           <span style="padding-left: 8px; padding-right: 8px;">Enviar
@@ -1023,20 +1009,7 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                                       title="Solo letras">
                               </div>
                           </div>
-                          <div class="group-form">
-                            <div class="group-label">
-                              <label for="InputFecha">Fecha</label>
-                          </div>
-                            <div class="group-input">
-                              <input type="date" 
-                              disabled
-                              class="form-control" 
-                              id="txtfecha2" 
-                              required
-                              name="txtfecha" 
-                              class="form-control" />                           
-                            </div>
-                          </div>
+                          
                           </div>
                           <button type="submit" class="btn btn-primary">
                           <span style="padding-left: 8px; padding-right: 8px;">Enviar
@@ -1116,20 +1089,6 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                                       title="Solo letras">
                               </div>
                           </div>
-                          <div class="group-form">
-                            <div class="group-label">
-                              <label for="InputFecha">Fecha</label>
-                          </div>
-                            <div class="group-input">
-                              <input type="date" 
-                              disabled
-                              class="form-control" 
-                              id="txtfecha3" 
-                              required
-                              name="txtfecha" 
-                              class="form-control" />                           
-                            </div>
-                          </div>
                           </div>
                           <button type="submit" class="btn btn-primary">
                           <span style="padding-left: 8px; padding-right: 8px;">Enviar
@@ -1207,20 +1166,6 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                                       onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
                                       title="Solo letras">
                               </div>
-                          </div>
-                          <div class="group-form">
-                            <div class="group-label">
-                              <label for="InputFecha">Fecha</label>
-                          </div>
-                            <div class="group-input">
-                              <input type="date" 
-                              disabled
-                              class="form-control" 
-                              id="txtfecha4" 
-                              required
-                              name="txtfecha" 
-                              class="form-control" />                           
-                            </div>
                           </div>
                           </div>
                           <button type="submit" class="btn btn-primary">
@@ -1300,20 +1245,6 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                                       title="Solo letras">
                               </div>
                           </div>
-                          <div class="group-form">
-                            <div class="group-label">
-                              <label for="InputFecha">Fecha</label>
-                          </div>
-                            <div class="group-input">
-                              <input type="date" 
-                              disabled
-                              class="form-control" 
-                              id="txtfecha5" 
-                              required
-                              name="txtfecha" 
-                              class="form-control" />                           
-                            </div>
-                          </div>
                           </div>
                           <button type="submit" class="btn btn-primary">
                           <span style="padding-left: 8px; padding-right: 8px;">Enviar
@@ -1392,20 +1323,6 @@ src="https://www.facebook.com/tr?id=310105693335437&ev=PageView
                                       onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97  && event.charCode <= 122)' 
                                       title="Solo letras">
                               </div>
-                          </div>
-                          <div class="group-form">
-                            <div class="group-label">
-                              <label for="InputFecha">Fecha</label>
-                          </div>
-                            <div class="group-input">
-                              <input type="date" 
-                              disabled
-                              class="form-control" 
-                              id="txtfecha6" 
-                              required
-                              name="txtfecha" 
-                              class="form-control" />                           
-                            </div>
                           </div>
                           </div>
                           <button type="submit" class="btn btn-primary">
@@ -1755,25 +1672,6 @@ function changeImage() {
       gtag('js', new Date());
 
       gtag('config', 'UA-113771734-1');
-    </script>
-    <script>
-      window.onload = function(){
-        var fecha = new Date(); //Fecha actual
-        var mes = fecha.getMonth()+1; //obteniendo mes
-        var dia = fecha.getDate(); //obteniendo dia
-        var ano = fecha.getFullYear(); //obteniendo año
-        if(dia<10)
-          dia='0'+dia; //agrega cero si el menor de 10
-        if(mes<10)
-          mes='0'+mes //agrega cero si el menor de 10
-        document.getElementById('txtfecha1').value=ano+"-"+mes+"-"+dia;
-        document.getElementById('txtfecha2').value=ano+"-"+mes+"-"+dia;
-        document.getElementById('txtfecha3').value=ano+"-"+mes+"-"+dia;
-        document.getElementById('txtfecha4').value=ano+"-"+mes+"-"+dia;
-        document.getElementById('txtfecha5').value=ano+"-"+mes+"-"+dia;
-        document.getElementById('txtfecha6').value=ano+"-"+mes+"-"+dia;
-
-      }
     </script>
 
     </body>
